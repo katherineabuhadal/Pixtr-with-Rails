@@ -1,6 +1,7 @@
 <h1>Galleries</h2>
+	<%= link_to "Create a gallery", "/galleries/new" %>
 <ul>
 	<% @galleries.each do |gallery| %>
-	<li><%= gallery.name %></li>
+	<li><%= link_to gallery.name, "/galleries/#{gallery.id}" %></li>
 	<% end %>
 </ul>
