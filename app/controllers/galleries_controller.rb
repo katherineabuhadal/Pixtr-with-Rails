@@ -27,6 +27,12 @@ class GalleriesController < ApplicationController
 		redirect_to "/galleries/#{gallery.id}"
 	end
 
+	def destroy
+		gallery = Gallery.find(params[:id])
+		gallery.destroy
+		redirect_to "/"
+	end
+
 	private
 
 	def gallery_params
