@@ -6,6 +6,7 @@ class GalleriesController < ApplicationController
 
 	def show
 		@gallery = Gallery.find(params[:id])
+		@images = Image.find(params[:id])
 	end
 
 	def new

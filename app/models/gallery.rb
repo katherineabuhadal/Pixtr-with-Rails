@@ -1,6 +1,5 @@
 class Gallery < ActiveRecord::Base
+	has_many :images
 end
 
-class Image < ActiveRecord::Base
-end
 

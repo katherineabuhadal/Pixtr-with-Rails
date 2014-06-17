@@ -10,6 +10,8 @@ class ImagesController < ApplicationController
 		redirect_to "/galleries/#{gallery.id}"
 	end
 
+
+
 	private
 
 	def image_params
@@ -17,4 +19,6 @@ class ImagesController < ApplicationController
 		require(:image).
 		permit(:url).merge(gallery_id: params[:gallery_id])
 	end
+
+
 end
