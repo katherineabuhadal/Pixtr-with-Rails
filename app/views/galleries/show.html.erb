@@ -2,5 +2,6 @@
 <p><%= @gallery.description %></p>
 <p><%= link_to "Edit Gallery", "/galleries/#{@gallery.id}/edit" %></p>
 <p><%= link_to "Delete Gallery", "/galleries/#{@gallery.id}", method: :delete %>
+<p><%= link_to "Add an image", "/galleries/#{@gallery.id}/images/new" %>
 
 

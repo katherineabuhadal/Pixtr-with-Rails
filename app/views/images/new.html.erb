@@ -1,0 +1,6 @@
+<%= form_for @image, url: "/galleries/#{@gallery.id}/images" do |form| %>
+	<%= form.label :url, "URL" %>
+	<%= form.text_field :url %>
+
+	<%= form.submit "Create new image" %>
+<% end %>
