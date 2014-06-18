@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--web gallery-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/style.css">
+		<title>My Web Gallery</title>
+	</head>
+	<body>
+		<%= form_for @user do |form| %>
+		<%= render "error_messages", target: @user %>
+
+			<%= form.label :email %>
+			<%= form.email_field :email %>
+
+			<%= form.label :password %>
+			<%= form.password_field :password %>
+
+			<%= form.label :password_confirmation %>
+			<%= form.password_field :password_confirmation %>
+
+
+			<%= form.submit "Submit" %>
+
+
+		<% end %>
+	</body>
