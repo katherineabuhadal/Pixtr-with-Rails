@@ -9,7 +9,13 @@
 <body>
 
 	<h1><%= link_to "Pixtr", root_path %></h2>
-		<%= link_to "Sign up", sign_up_path %>
+		<% if signed_in? %>
+			You are signed in as: <%= current_user.email %>
+		<% else %>
+			<%= link_to "Sign up", sign_up_path %>
+			<%= link_to "Sign in", sign_in_path %>
+		<% end %>
+	
 	<%= yield %>
 
 </body>
