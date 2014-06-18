@@ -1,0 +1,7 @@
+<%= form_for [@gallery, @image] do |form| %>
+
+	<%= form.label :url, "URL" %>
+	<%= form.text_field :url %>
+
+	<%= form.submit "Edit image" %>
+<% end %>

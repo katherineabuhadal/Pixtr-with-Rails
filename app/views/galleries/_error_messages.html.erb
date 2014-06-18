@@ -1,0 +1,8 @@
+<% if @gallery.errors.any? %>
+
+	<ul>
+		<% @gallery.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+	<% end %> 
+	</ul>
+<% end %>

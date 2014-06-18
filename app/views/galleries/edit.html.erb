@@ -1,7 +1,8 @@
 <h2>Edit gallery</h2>
 <%= @gallery.name %>
 
-<%= form_for @gallery, url: "/galleries/#{@gallery.id}" do |form| %>
+<%= form_for @gallery do |form| %>
+
 	<div>
 		<%= form.label :name %>
 		<%= form.text_field :name %>
