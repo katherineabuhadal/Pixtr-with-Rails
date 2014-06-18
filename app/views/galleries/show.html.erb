@@ -3,14 +3,8 @@
 	<%= link_to "home", root_path %>
 <p><%= link_to "Edit Gallery", [:edit, @gallery] %></p>
 	<% @gallery.images.each do |image| %>
-	
-	<%= image_tag image.url %>
+		<%= image_tag image.url %>
+		<p><%= link_to "Edit an image", [:edit, @gallery, image] %></p>
 	<% end %>
 <p><%= link_to "Delete Gallery", [@gallery], method: :delete %>
 <p><%= link_to "Add an image", [:new, @gallery, :image] %>
-<p><%= link_to "Edit an image", [:edit, @image, @gallery] %></p>
-
-
-
-
-

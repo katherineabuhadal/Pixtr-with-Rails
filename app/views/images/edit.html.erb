@@ -1,7 +1,12 @@
-<%= form_for [@gallery, @image] do |form| %>
+<h2>Edit Images</h2>
 
+<%= form_for [@gallery, @image] do |form| %>
+	<%= render "error_messages", target: @image %>
 	<%= form.label :url, "URL" %>
 	<%= form.text_field :url %>
 
 	<%= form.submit "Edit image" %>
+
 <% end %>
+
+
