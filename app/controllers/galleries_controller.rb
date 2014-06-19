@@ -9,7 +9,7 @@ class GalleriesController < ApplicationController
 	end
 
 	def new
-		@gallery = Gallery.new
+		@gallery = current_user.galleries.new
 	end
 
 	def create
@@ -29,6 +29,8 @@ class GalleriesController < ApplicationController
 	def edit
 		#@gallery = Gallery.find(params[:id])
 		@gallery = current_user.galleries.find(params[:id])
+		#the_user = current_user
+		#galleries
 
 	end
 
@@ -43,7 +45,7 @@ class GalleriesController < ApplicationController
 	end
 
 	def destroy
-		gallery = Gallery.find(params[:id])
+		gallery = current_user.galleries.find(params[:id])
 		gallery.destroy
 		redirect_to "/"
 	end
