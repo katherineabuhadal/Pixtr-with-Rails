@@ -9,12 +9,13 @@
 	
 	<body>
 	<h2><%= @gallery.name %></h2>
+	<p>Proudly owned by <%= @gallery.user.email %></p>
 	<p><%= @gallery.description %></p>
 		<%= link_to "home", root_path %>
 	<p><%= link_to "Edit Gallery", [:edit, @gallery] %></p>
 		<% @gallery.images.each do |image| %>
 			<%= image_tag image.url %>
-			<p><%= link_to "Edit an image", [:edit, @gallery, image] %></p>
+			<p><%= link_to "Edit image", [:edit, @gallery, image] %></p>
 		<% end %>
 	<p><%= link_to "Delete Gallery", [@gallery], method: :delete %>
 	<p><%= link_to "Add an image", [:new, @gallery, :image] %>
