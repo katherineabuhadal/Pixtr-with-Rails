@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<h1>Pixtr</h2>
+<h1> Pixtr</h2>
+	<% if ! signed_in? %>
+		<%= link_to "Sign up", [:new, :user] %>
+		<%= link_to "Sign in", [:new, :session] %>
+	<% else %>
+		<%= button_to "Sign out", :session, method: :delete %>
+	<% end %>
+
 <%= yield %>
 
 </body>
