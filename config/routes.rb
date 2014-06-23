@@ -8,8 +8,10 @@ resources :galleries, only: [:show, :new, :create, :edit, :update, :destroy] do
   resources :images, only: [:new, :create, :destroy] 
   #get "/images/new" => "images#new"
 end
-resources  :images, only: [:show, :edit, :update]
+resources  :images, only: [:show, :edit, :update] do
+resources :comments, only: [:show, :new, :create]
 #post "/images" => "images#create"
+end
 
 end
 
