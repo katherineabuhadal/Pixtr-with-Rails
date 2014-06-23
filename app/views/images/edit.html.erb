@@ -1,6 +1,6 @@
 <h2>Edit Images</h2>
 
-<%= form_for [@gallery, @image] do |form| %>
+<%= form_for @image do |form| %>
 	<%= render "error_messages", target: @image %>
 	<%= form.label :url, "URL" %>
 	<%= form.text_field :url %>

@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 root to:"galleries#index"
-resources :galleries, only: [:show, :new, :create, :edit, :update, :destroy] do
-  resources :images, only: [:new, :create, :edit, :update, :destroy] 
-  #get "/images/new" => "images#new"
-  #post "/images" => "images#create"
 
+resources :galleries, only: [:show, :new, :create, :edit, :update, :destroy] do
+  resources :images, only: [:new, :create, :destroy] 
+  #get "/images/new" => "images#new"
 end
+resources  :images, only: [:edit, :update]
+#post "/images" => "images#create"
 
 end
 
