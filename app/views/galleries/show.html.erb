@@ -22,7 +22,8 @@
 	
 		<% @gallery.images.each do |image| %>
 			<%= image_tag image.url %>
-			<p><%= link_to "Edit image", [:edit, image] %></p>
+      <p><%= link_to "Edit image", [:edit, image] %></p>
+      <p><%= link_to "View Image", [image] %></p>
 			<%= time_ago_in_words image.created_at %>
 		<% end %>
 
