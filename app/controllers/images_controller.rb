@@ -6,8 +6,7 @@ class ImagesController < ApplicationController
 
 	def create
 		@image = Image.new(image_params)
-		@gallery = @gallery.images.find(params[:gallery_id])
-
+		@gallery = current_user.galleries.find(params[:gallery_id])
 		if @image.save
 			redirect_to @gallery
 		else

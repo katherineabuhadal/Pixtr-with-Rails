@@ -12,6 +12,8 @@
 	<% if signed_in? %>
 		<%= button_to "Sign out", :session, method: :delete %>
 	<% else %>
+		<% unless controller_name == "users" && action_name == "new" %>
+		<% end %>
 		<%= link_to "Sign up", [:new, :user] %>
 		<%= link_to "Sign in", [:new, :session] %>
 	<% end %>

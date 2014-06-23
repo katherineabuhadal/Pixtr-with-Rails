@@ -13,15 +13,17 @@
 	<p><%= @gallery.description %></p>
 		<%= link_to "home", root_path %>
 
-	
+		<% if current_user == @gallery.user %>
 		<p><%= link_to "Edit Gallery", [:edit, @gallery] %></p>
 		<p><%= link_to "Delete Gallery", [@gallery], method: :delete %>
 		<p><%= link_to "Add an image", [:new, @gallery, :image] %>
-	
+
+		<% end %>
 	
 		<% @gallery.images.each do |image| %>
 			<%= image_tag image.url %>
 			<p><%= link_to "Edit image", [:edit, @gallery, image] %></p>
+			<%= time_ago_in_words image.created_at %>
 		<% end %>
 
 	</body>
