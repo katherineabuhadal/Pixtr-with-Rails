@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     #post "/images" => "images#create"
   end
 
+  resources :groups, only: [:new, :create]
+
 end
 
 =begin

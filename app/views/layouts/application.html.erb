@@ -11,7 +11,8 @@
 <h1> Pixtr</h2>
 	<% if signed_in? %>
 		<%= button_to "Sign out", :session, method: :delete %>
-	<% else %>
+    <%= link_to "create a new group", [:new, :group] %>
+  <% else %>
 		<% unless controller_name == "users" && action_name == "new" %>
 		<% end %>
 		<%= link_to "Sign up", [:new, :user] %>
