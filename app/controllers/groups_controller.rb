@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    @group_membership = GroupMembership.new
   end
 
   private
