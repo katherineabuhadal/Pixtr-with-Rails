@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     #post "/images" => "images#create"
   end
 
-  resources :groups, only: [:new, :create]
+  resources :groups, only: [:new, :create, :index]
 
 end
 
