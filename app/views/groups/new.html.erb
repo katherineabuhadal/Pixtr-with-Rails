@@ -1,11 +1,11 @@
 <%= form_for @group do |form| %>
   <%= render "error_messages", target: @group %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<%= form.label :name %>
+<%= form.text_field :name %>
 
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+<%= form.label :description %>
+<%= form.text_area :description %>
 
-  <%= form.submit "Create new group" %>
+<%= form.submit "Create new group" %>
 
 <% end %>
