@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :groups, only: [:new, :create, :index, :show] do
-    resources :group_memberships, only: [:create]
+    resource :group_membership, only: [:create]
   end
 
 
