@@ -1,20 +1,10 @@
 <h2>Groups Page</h2>
 
 <ul>
-  <% @groups.each do |group| %>
-    <li>
-  <%= render group %>
-  <% if ! current_user.member?(group)  %>
-    <%= button_to "Join this group!", [group, :group_membership] %>
-   
-  <% end %>
-
-  </li>
-<% end %>
+  <%= render @groups %>
 </ul>
 
 <h3> My groups </h3>
-<% @my_groups.each do |group| %>
-  <%= render group %>
-<% end %>
+
+<%= render @my_groups %>
 

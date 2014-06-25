@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-  color: #3D2966;
+color: #14141F;
 }
 
 p {
@@ -71,10 +71,11 @@ img {
   margin: 10px;
   float: center;
   width: 200px;
-  
-  max-height: auto;
-  max-width: 100%;
   height: auto; 
- 
-  
+}
+
+#logo {
+  font-size: 60px;
+  color: #14141F;
+  font-style: bold;
 }

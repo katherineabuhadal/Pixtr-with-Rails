@@ -9,12 +9,12 @@
 <body>
 
 <div id="container">
-	<h1>pixtr</h1>
+	<h1><div id="logo"><%= link_to "pixtr", root_path %></div></h1>
 	<h4><em>it's the coolest image sharing app everrr</em></h4>
 	<% if signed_in? %>
 		<%= button_to "Sign out", :session, method: :delete %>
 		<div>
-    <%= link_to "create a new group", [:new, :group] %>
+    <h3><%= link_to "Create a new group", [:new, :group] %></h3>
   </div>
   <% else %>
 		<% unless controller_name == "users" && action_name == "new" %>
