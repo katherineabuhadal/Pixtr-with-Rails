@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<h1> Pixtr</h2>
+<div id="container">
+	<h1>pixtr</h1>
+	<h4><em>it's the coolest image sharing app everrr</em></h4>
 	<% if signed_in? %>
 		<%= button_to "Sign out", :session, method: :delete %>
+		<div>
     <%= link_to "create a new group", [:new, :group] %>
+  </div>
   <% else %>
 		<% unless controller_name == "users" && action_name == "new" %>
 		<% end %>
@@ -20,6 +24,6 @@
 	<% end %>
 
 <%= yield %>
-
+</div>i
 </body>
 </html>

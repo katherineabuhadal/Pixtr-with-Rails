@@ -1,4 +1,9 @@
 class GroupsController < ApplicationController
+  def show
+    @group = Group.find(params[:id])
+    @groups = Group.all 
+@group_images = GroupImage.all
+  end
   def new
     @group = Group.new
   end

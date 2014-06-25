@@ -13,10 +13,13 @@ Rails.application.routes.draw do
     #post "/images" => "images#create"
   end
 
-  resources :groups, only: [:new, :create, :index] do
+  resources :groups, only: [:new, :create, :index, :show] do
     resources :group_memberships, only: [:create]
   end
+
+
 end
+
 
 =begin
   get "/" => "galleries#index"

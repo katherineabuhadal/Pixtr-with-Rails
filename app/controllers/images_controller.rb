@@ -3,6 +3,8 @@ class ImagesController < ApplicationController
   @image = Image.find(params[:id])
   @comment = Comment.new
   @comments = @image.comments.recent
+  @groups = Group.all
+  @group_image = @image
   end
 
   def new
@@ -35,7 +37,7 @@ class ImagesController < ApplicationController
     @image = current_user.images.find(params[:id])
 
 		if @image.update(image_params)
-      redirect_to  @image.gallery
+      redirect_to  @image
 		else
 			render :edit
 		end
@@ -54,7 +56,8 @@ class ImagesController < ApplicationController
 	def image_params
 		params.
 		require(:image).
-		permit(:url)
+		permit(:url,
+          :group_ids, [])
 	end
 
 
