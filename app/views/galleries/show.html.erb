@@ -11,8 +11,6 @@
 	<h2><%= @gallery.name %></h2>
 	<p>Proudly owned by <%= @gallery.user.email %></p>
 	<p><%= @gallery.description %></p>
-		<%= link_to "home", root_path %>
-
 		<% if current_user == @gallery.user %>
 		<p><%= link_to "Edit Gallery", [:edit, @gallery] %></p>
 		<p><%= link_to "Delete Gallery", [@gallery], method: :delete %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources  :images, only: [:show, :edit, :update] do
     resources :comments, only: [:create]
+    resource :like, only: [:create, :destroy]
     #post "/images" => "images#create"
   end
 

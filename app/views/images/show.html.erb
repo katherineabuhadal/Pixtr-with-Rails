@@ -8,10 +8,12 @@
 <%= form.submit "Submit" %>
 <% end %>
 
+<%= render "likes" %>
+
 <div>
   <%= form_for [@image] do |form| %>
     <%= form.label "Groups" %>
-    <p> <%= form.collection_check_boxes :group_ids, @groups, :id, :name  %></p>
+  <p> <%= form.collection_check_boxes :group_ids, @groups, :id, :name  %></p>
   <%= form.submit "Add to Group" %>
 <% end %>
 

@@ -1,0 +1,13 @@
+
+
+<% if  current_user.like?(@image)%>
+
+     <%= button_to "Unlike", [@image, :like], method: :delete %> 
+     <% else %>
+
+     <%= button_to "Like", [@image, :like] %>
+     <% end %>
+   <% number_of_likes = Like.all.count %>
+     <%= number_of_likes %> likes
+
+
