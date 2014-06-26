@@ -7,7 +7,7 @@
 
      <%= button_to "Like", [@image, :like] %>
      <% end %>
-   <% number_of_likes = Like.all.count %>
+   <% number_of_likes = @image.likes.count %>
      <%= number_of_likes %> likes
 
 

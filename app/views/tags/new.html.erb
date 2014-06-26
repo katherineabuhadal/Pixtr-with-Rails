@@ -1,0 +1,10 @@
+<h2> New Tag </h2>
+<%= form_for  @tag do |form| %>
+  <%= render "error_messages", target: @tag %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+
+
+<%= form.submit "Create new tag" %>
+
+<% end %>

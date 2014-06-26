@@ -11,6 +11,27 @@
 <%= render "likes" %>
 
 <div>
+  <h4> THE TAGS </h4>
+<% @tagged_images.each do |tag| %> 
+  <%= tag.name %>
+<% end %>
+</div>
+
+<div>
+<%= link_to "Make a new Tag", [:new, :tag] %>
+</div>
+
+<%= form_for [@image] do |form| %>
+  <%= form.label "Tags" %>
+  <%= form.collection_check_boxes :tag_ids, @tags, :id, :name  %>
+  <%= form.submit "Tag image" %>
+<% end %>
+
+
+
+
+
+<div>
   <%= form_for [@image] do |form| %>
     <%= form.label "Groups" %>
   <p> <%= form.collection_check_boxes :group_ids, @groups, :id, :name  %></p>

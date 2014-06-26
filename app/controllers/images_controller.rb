@@ -5,6 +5,8 @@ class ImagesController < ApplicationController
   @comments = @image.comments.recent
   @groups = Group.all
   @group_image = @image
+  @tags = Tag.all
+  @tagged_images = @image.tags
   end
 
   def new
@@ -57,7 +59,8 @@ class ImagesController < ApplicationController
 		params.
 		require(:image).
 		permit(:url,
-          group_ids: [])
+          group_ids: [],
+          tag_ids: [])
 	end
 
 
