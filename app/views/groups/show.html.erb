@@ -1,2 +1,9 @@
-<%= render @group %>
 
+<%= render @group %>
+<%= button_to "Delete Group", @group, method: :delete %>
+
+<% @group.images.each do |image| %>
+  <%= link_to(image) do %>
+<%= image_tag(image.url) %>
+<% end %>
+<% end %>

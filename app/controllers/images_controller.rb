@@ -57,7 +57,7 @@ class ImagesController < ApplicationController
 		params.
 		require(:image).
 		permit(:url,
-          :group_ids, [])
+          group_ids: [])
 	end
 
 

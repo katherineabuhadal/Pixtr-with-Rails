@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     #post "/images" => "images#create"
   end
 
-  resources :groups, only: [:new, :create, :index, :show] do
+  resources :groups, only: [:new, :create, :index, :show, :destroy] do
     resource :group_membership, only: [:create, :destroy]
   end
 
