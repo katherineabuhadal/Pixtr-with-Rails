@@ -7,6 +7,8 @@ class ImagesController < ApplicationController
   @group_image = @image
   @tags = Tag.all
   @tagged_images = @image.tags
+
+#  @tag = Taggings.find(params[:tag_id]) 
   end
 
   def new

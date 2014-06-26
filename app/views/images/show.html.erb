@@ -13,7 +13,7 @@
 <div>
   <h4> THE TAGS </h4>
 <% @tagged_images.each do |tag| %> 
-  <%= tag.name %>
+  <%= link_to tag.name  %>
 <% end %>
 </div>
 
