@@ -1,0 +1,11 @@
+
+
+<% if  current_user.like?(target)%>
+
+  <%= button_to "Unlike", [target, :like], method: :delete %> 
+     <% else %>
+
+  <%= button_to "Like", [target, :like] %>
+     <% end %>
+
+
