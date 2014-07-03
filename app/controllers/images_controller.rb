@@ -8,7 +8,6 @@ class ImagesController < ApplicationController
     @tags = Tag.all
     @tagged_images = @image.tags
 
-
     #  @tag = Taggings.find(params[:tag_id]) 
   end
 
