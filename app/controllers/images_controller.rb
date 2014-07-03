@@ -7,8 +7,6 @@ class ImagesController < ApplicationController
     @group_image = @image
     @tags = Tag.all
     @tagged_images = @image.tags
-
-    #  @tag = Taggings.find(params[:tag_id]) 
   end
 
   def new
@@ -17,7 +15,6 @@ class ImagesController < ApplicationController
   end
 
   def create
-
     @gallery = current_user.galleries.find(params[:gallery_id])
     @image = @gallery.images.new(image_params)
     if @image.save
@@ -28,16 +25,11 @@ class ImagesController < ApplicationController
   end
 
   def edit
-    #	@gallery = current_user.galleries.find(params[:gallery_id])
-    #	@image = @gallery.images.find(params[:id])
     @image = current_user.images.find(params[:id])
 
   end
 
   def update
-    #	@gallery = current_user.galleries.find(params[:gallery_id])
-    #	@image = @gallery.images.find(params[:id])
-
     @image = current_user.images.find(params[:id])
 
     if @image.update(image_params)
@@ -49,10 +41,9 @@ class ImagesController < ApplicationController
 
 
   def destroy
-    gallery = current_user.galleries.find(params[:gallery_id])
-    image = @gallery.images.find(params[:id])
+    image = current_user.images.find(params[:id])
     image.destroy
-    redirect_to "/galleries/#{gallery.id}"
+    redirect_to :back
   end
 
   private

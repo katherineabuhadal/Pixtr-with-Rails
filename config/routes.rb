@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   resources :galleries, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :images, only: [:new, :create, :destroy] 
+    resource :gallery_like, only: [:create, :destroy], as: :like
     #get "/images/new" => "images#new"
   end
-  resources  :images, only: [:show, :edit, :update] do
+  resources  :images, only: [:show, :edit, :update, :destroy] do
     resources :comments, only: [:create]
     resource :like, only: [:create, :destroy]
     #post "/images" => "images#create"

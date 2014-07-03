@@ -23,7 +23,6 @@ class User < ActiveRecord::Base
 
   def leave(group)
     groups.destroy(group)
-
   end
 
   def like(likeable)
