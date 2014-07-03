@@ -2,9 +2,11 @@
 <p>Gallery owned by <%= @gallery.user.email %></p>
 <p><%= @gallery.description %></p>
 <% if current_user == @gallery.user %>
-  <%= link_to "Edit Gallery", [:edit, @gallery] %>
-<%= link_to "Delete Gallery", [@gallery], method: :delete %>
-<%= link_to "Add an image", [:new, @gallery, :image] %>
+  <h5>
+  <%= link_to "Edit Gallery", [:edit, @gallery] %> |
+  <%= link_to "Delete Gallery", [@gallery], method: :delete %> |
+  <%= link_to "Add an image", [:new, @gallery, :image] %> 
+  </h5>
     <% end %>
 
 <%= render "likes", target: @gallery %>
